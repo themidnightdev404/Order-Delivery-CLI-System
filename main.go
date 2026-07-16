@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"order_system/domain"
 	"order_system/repository/memory"
+	service "order_system/service"
 )
 
 func main() {
@@ -101,4 +102,7 @@ func main() {
 		fmt.Println("Ожидаемая ошибка:", err)
 	}
 
+	something := service.DiscountCalculator{}
+	calculator := something.Calculate(&customer, 1000)
+	fmt.Println(calculator)
 }
